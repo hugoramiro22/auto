@@ -61,9 +61,10 @@ FRONTEND_URL=${frontend_url}
 PROXY_PORT=443
 PORT=${backend_port}
 
-DB_DIALECT=postgres
 DB_HOST=localhost
+DB_DIALECT=postgres
 DB_PORT=5432
+DB_TIMEZONE=-03:00
 DB_USER=${instancia_add}
 DB_PASS=${mysql_root_password}
 DB_NAME=${instancia_add}
@@ -78,6 +79,7 @@ REGIS_OPT_LIMITER_DURATION=3000
 USER_LIMIT=${max_user}
 CONNECTIONS_LIMIT=${max_whats}
 CLOSED_SEND_BY_ME=true
+
 
 [-]EOF
 EOF
@@ -99,7 +101,7 @@ backend_node_dependencies() {
 
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/backend
-  npm install --force
+  npm install
 EOF
 
   sleep 2
@@ -147,7 +149,6 @@ backend_update() {
   npm install @types/fs-extra
   rm -rf dist 
   npm run build
-  npx sequelize db:migrate
   npx sequelize db:migrate
   npx sequelize db:seed
   pm2 start ${empresa_atualizar}-backend

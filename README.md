@@ -1,11 +1,2 @@
-FAZENDO DOWNLOAD DO INSTALADOR & INICIANDO A PRIMEIRA INSTALAÇÃO (USAR SOMENTE PARA PRIMEIRA INSTALAÇÃO):
-
-```bash
-sudo apt install -y git && git clone https://github.com/hugoramiro22/autoinstall.git && sudo chmod -R 777 autoinstall && cd autoinstall && sudo ./install_primaria
-```
-
-ACESSANDO DIRETORIO DO INSTALADOR & INICIANDO INSTALAÇÕES ADICIONAIS (USAR ESTE COMANDO PARA SEGUNDA OU MAIS INSTALAÇÃO:
-```bash
-cd ./autoinstaladorsaas && sudo ./install_instancia
-```
-
+# whaticket-instalador-tiago
+ 
